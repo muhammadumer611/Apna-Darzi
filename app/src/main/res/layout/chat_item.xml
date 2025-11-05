@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:padding="12dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginHorizontal="20dp"
+    android:background="@android:color/white">
+
+    <!-- Circular Profile Image -->
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/rounded_transparent_circle"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_bg"
+        android:padding="3dp" />
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umer"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@id/imgProfile" />
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:45 PM"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_alignTop="@id/tvName" />
+
+    <!-- Subtitle / Last Message -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hey, what's up?"
+        android:textSize="14sp"
+        android:textColor="#7A7A7A"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@id/imgProfile"
+        android:layout_below="@id/tvName" />
+
+</RelativeLayout>

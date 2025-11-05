@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="180dp"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/bgImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/machine_pic" />
+
+        <!-- Gradient Overlay -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_overlay" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom Suit Tailoring"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- ✅ Subtitle (Arshad Tailor Studio) -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arshad Tailor Studio"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="4dp" />
+
+        <!-- Rating section -->
+        <LinearLayout
+            android:id="@+id/ratingLayout"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_star"
+                />
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.8"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PKR 1,000"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/ratingLayout"
+            android:layout_marginEnd="16dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
