@@ -12,10 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Top Row (Recent Chats + Search Icon) -->
+        <!-- 🔹 Recent Chats Row -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:paddingBottom="10dp">
 
             <TextView
@@ -31,26 +32,49 @@
                 android:id="@+id/ivSearch"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/ic_search"
                 android:layout_alignParentEnd="true"
                 android:padding="6dp"
-                android:background="?attr/selectableItemBackgroundBorderless" />
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_search" />
         </RelativeLayout>
 
-        <!-- All chats button -->
-        <Button
+
+        <!-- 🔹 Pinned Chats Section -->
+        <TextView
+            android:id="@+id/tvPinnedChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pinned Chats"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#0C1445"
+            android:visibility="gone"
+            android:layout_marginTop="6dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPinnedChats"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone" />
+
+
+        <!-- 🔹 All chats button -->
+        <TextView
             android:id="@+id/btnAllChats"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="All chats"
             android:textAllCaps="false"
+            android:paddingTop="7dp"
             android:textSize="14sp"
             android:textColor="@android:color/white"
             android:background="@drawable/btn_yellow_rounded"
             android:paddingHorizontal="18dp"
-            android:layout_marginTop="6dp" />
+            android:layout_marginTop="10dp" />
 
-        <!-- RecyclerView -->
+
+        <!-- 🔹 All chats list -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvChats"
             android:layout_width="match_parent"

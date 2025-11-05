@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ApnaDarzi">
         <activity
+            android:name=".PersonalChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeScreenActivity"
             android:exported="false" />
         <activity

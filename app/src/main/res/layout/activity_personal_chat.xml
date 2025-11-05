@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECECEC">
+
+    <!-- ─────── TOP BAR (Back + Profile + Call + Video) ─────── -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <!-- Back icon -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow"
+            android:backgroundTint="@color/black" />
+
+        <!-- Profile pic + name -->
+        <LinearLayout
+            android:id="@+id/userDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:orientation="horizontal"
+            android:layout_toEndOf="@id/ivBack">
+
+            <ImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:background="@drawable/bg_circle"
+                android:padding="6dp" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Doe"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Video call button -->
+        <ImageView
+            android:id="@+id/ivVideo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_vedio"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/black"
+            android:layout_centerVertical="true" />
+
+        <!-- Phone call button -->
+        <ImageView
+            android:id="@+id/ivCall"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_call"
+            android:backgroundTint="@color/black"
+            android:layout_toStartOf="@id/ivVideo"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+
+    <!-- ─────── CHAT MESSAGES LIST ─────── -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/messageBox"
+        android:layout_below="@id/topBar"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+
+    <!-- ─────── MESSAGE INPUT BOX ─────── -->
+    <LinearLayout
+        android:id="@+id/messageBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:paddingHorizontal="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Emoji -->
+        <ImageView
+            android:id="@+id/ivEmoji"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_emoji"
+            android:backgroundTint="#444444" />
+
+        <!-- Message input -->
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Message"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:background="@drawable/bg_edittext_round"
+            android:maxLines="3" />
+
+        <!-- Attachment -->
+        <ImageView
+            android:id="@+id/ivAttach"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_attach"
+            android:backgroundTint="#444444"
+            android:layout_marginStart="6dp" />
+
+        <!-- Send -->
+        <ImageView
+            android:id="@+id/ivSend"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/ic_send"
+            android:background="@drawable/bg_send_circle"
+            android:padding="10dp"
+            android:layout_marginStart="6dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
