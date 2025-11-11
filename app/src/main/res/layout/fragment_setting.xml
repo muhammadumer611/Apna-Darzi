@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6FA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- ✅ SETTINGS HEADER -->
+        <TextView
+            android:id="@+id/txtSettingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000" />
+
+        <!-- ✅ PROFILE CARD -->
+        <RelativeLayout
+            android:id="@+id/profileCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@drawable/bg_card"
+            android:layout_below="@id/txtSettingsTitle"
+            android:layout_marginTop="14dp">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/profile"
+                android:background="@drawable/bg_round"
+                android:padding="3dp"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@id/imgProfile"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waqas Haider"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/txtUserPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+923012345678"
+                    android:textColor="#696969"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <!-- ✅ ACCOUNT MANAGEMENT SECTION -->
+        <TextView
+            android:id="@+id/txtAccountHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account Management"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#77838F"
+            android:layout_below="@id/profileCard"
+            android:layout_marginTop="18dp"/>
+
+        <include
+            android:id="@+id/rowAccountInfo"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtAccountHeader"
+            android:layout_marginTop="8dp"/>
+
+        <include
+            android:id="@+id/rowPrivacy"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rowAccountInfo"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- ✅ BOOKING / ORDERS SECTION -->
+        <TextView
+            android:id="@+id/txtBookingHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking / Orders"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#77838F"
+            android:layout_below="@id/rowPrivacy"
+            android:layout_marginTop="18dp"/>
+
+        <include
+            android:id="@+id/rowWishlist"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtBookingHeader"
+            android:layout_marginTop="10dp"/>
+
+        <include
+            android:id="@+id/rowBookings"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rowWishlist"
+            android:layout_marginTop="8dp"/>
+
+        <include
+            android:id="@+id/rowPayments"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rowBookings"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- ✅ SUPPORT / APP INFO -->
+        <TextView
+            android:id="@+id/txtSupportHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Support / App Info"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#77838F"
+            android:layout_below="@id/rowPayments"
+            android:layout_marginTop="18dp"/>
+
+        <include
+            android:id="@+id/helpandsupport"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtSupportHeader"
+            android:layout_marginTop="10dp"/>
+
+        <include
+            android:id="@+id/personalization"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/helpandsupport"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- ✅ ENGAGEMENT -->
+        <TextView
+            android:id="@+id/txtEngagementHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engagement"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#77838F"
+            android:layout_below="@id/personalization"
+            android:layout_marginTop="18dp"/>
+
+        <include
+            android:id="@+id/rowReviews"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtEngagementHeader"
+            android:layout_marginTop="10dp"/>
+
+        <include
+            android:id="@+id/rowNotifications"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rowReviews"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- ✅ SHOP SECTION -->
+        <TextView
+            android:id="@+id/txtShopHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shop Registration"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#77838F"
+            android:layout_below="@id/rowNotifications"
+            android:layout_marginTop="18dp"/>
+
+        <include
+            android:id="@+id/rowShop"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtShopHeader"
+            android:layout_marginTop="10dp"
+            android:background="#FFF7D6"/>
+
+
+        <!-- ✅ SESSION (AFTER SHOP) -->
+        <TextView
+            android:id="@+id/txtSession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Session"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#77838F"
+            android:layout_below="@id/rowShop"
+            android:layout_marginTop="18dp"/>
+
+
+        <!-- ✅ LOGOUT -->
+        <include
+            android:id="@+id/rowLogout"
+            layout="@layout/row_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtSession"
+            android:layout_marginTop="12dp"/>
+
+    </RelativeLayout>
+</ScrollView>

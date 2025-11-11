@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="300dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Shop Image -->
+        <ImageView
+            android:id="@+id/shop_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            android:background="@color/white" />
+
+        <!-- Heart icon -->
+        <ImageView
+            android:id="@+id/fav_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_favorite_border_white"
+            android:background="@drawable/rounded_transparent_circle"
+            android:padding="4dp" />
+
+        <!-- Shop title -->
+        <TextView
+            android:id="@+id/shop_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom Suit Tailoring with modern design and cheap rates"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_below="@id/shop_image"
+            android:layout_marginTop="8dp" />
+
+        <!-- Studio name -->
+        <TextView
+            android:id="@+id/studio_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arshad Tailor Studio"
+            android:textColor="#666666"
+            android:textSize="13sp"
+            android:layout_below="@id/shop_title"
+            android:layout_marginTop="2dp" />
+
+        <!-- Rating + Star -->
+        <LinearLayout
+            android:id="@+id/rating_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/studio_name"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/rating_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                android:layout_marginStart="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• 5 Specials"
+                android:textColor="#666666"
+                android:textSize="13sp"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+
+        <!-- Price + Delivery -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/rating_layout"
+            android:layout_marginTop="8dp"
+            android:weightSum="2"
+            >
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PKR 2000"
+                android:textColor="#E91E63"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Days Delivery"
+                android:textColor="#666666"
+                android:textSize="13sp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

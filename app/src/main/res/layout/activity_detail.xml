@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/containerMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- ✅ MAIN IMAGE -->
+        <ImageView
+            android:id="@+id/imgMain"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_card"
+            android:clipToOutline="true" />
+
+        <!-- ✅ THUMBNAIL IMAGES -->
+        <RelativeLayout
+            android:id="@+id/thumbContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgMain"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/thumb1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_roud_smaall" />
+
+            <ImageView
+                android:id="@+id/thumb2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_toEndOf="@id/thumb1"
+                android:layout_marginStart="6dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_roud_smaall" />
+
+            <ImageView
+                android:id="@+id/thumb3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_toEndOf="@id/thumb2"
+                android:layout_marginStart="6dp"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_roud_smaall" />
+        </RelativeLayout>
+
+        <!-- ✅ TITLE -->
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/thumbContainer"
+            android:layout_marginTop="18dp"
+            android:text="Custom Suit Tailoring"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000" />
+
+        <!-- ✅ TAILOR NAME -->
+        <TextView
+            android:id="@+id/txtTailor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTitle"
+            android:layout_marginTop="4dp"
+            android:text="Arshad Tailor Studio"
+            android:textSize="14sp"
+            android:textColor="#8D8D8D" />
+
+        <!-- ✅ RATING -->
+        <TextView
+            android:id="@+id/txtRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTailor"
+            android:layout_marginTop="6dp"
+            android:text="⭐ 4.9 (320 reviews)"
+            android:textSize="14sp"
+            android:textColor="#FF9800" />
+
+        <!-- ✅ PRICE CARD -->
+        <RelativeLayout
+            android:id="@+id/priceCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtRating"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_card"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/txtPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Starting From"
+                android:textColor="#808080"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtPriceLabel"
+                android:text="PKR 8,000"
+                android:textColor="#E63946"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDelivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="5 Days Delivery"
+                android:textSize="12sp"
+                android:textColor="#808080" />
+        </RelativeLayout>
+
+        <!-- ✅ ABOUT THIS GIG -->
+        <RelativeLayout
+            android:id="@+id/aboutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/priceCard"
+            android:layout_marginTop="16dp"
+            android:padding="14dp"
+            android:background="@drawable/bg_card">
+
+            <TextView
+                android:id="@+id/aboutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About This Gig"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutTitle"
+                android:layout_marginTop="8dp"
+                android:text="High-quality tailoring with premium stitching and custom fitting."
+                android:textSize="14sp"
+                android:textColor="#444" />
+        </RelativeLayout>
+
+        <!-- ✅ TAILOR INFO -->
+        <RelativeLayout
+            android:id="@+id/tailorInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/aboutCard"
+            android:layout_marginTop="14dp"
+            android:padding="14dp"
+            android:background="@drawable/bg_card">
+
+            <TextView
+                android:id="@+id/infoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tailor Information"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/txtTailorLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/infoTitle"
+                android:layout_marginTop="6dp"
+                android:text="Karachi"
+                android:textSize="14sp"
+                android:textColor="#444" />
+        </RelativeLayout>
+
+        <!-- ✅ REVIEWS -->
+        <RelativeLayout
+            android:id="@+id/reviewCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tailorInfo"
+            android:layout_marginTop="14dp"
+            android:padding="14dp"
+            android:background="@drawable/bg_card">
+
+            <TextView
+                android:id="@+id/reviewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer Reviews"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/reviewUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reviewTitle"
+                android:layout_marginTop="8dp"
+                android:text="Ahmed — ⭐ 5"
+                android:textSize="14sp"
+                android:textColor="#444" />
+
+            <TextView
+                android:id="@+id/reviewMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reviewUser"
+                android:text="Perfect fitting, amazing craftsmanship!"
+                android:textSize="13sp"
+                android:textColor="#6A6A6A" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

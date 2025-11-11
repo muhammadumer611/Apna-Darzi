@@ -1,20 +1,24 @@
 package com.apna.darzi
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.apna.darzi.databinding.ActivityLoginScreenBinding
+import com.apna.darzi.databinding.ActivitySignUpScreenBinding
 
 class ActivitySignUpScreen : AppCompatActivity() {
+    private lateinit var binding: ActivitySignUpScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_sign_up_screen)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivitySignUpScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.btnSignUp.setOnClickListener {
+            intent = Intent(this@ActivitySignUpScreen, ActivityLoginScreen::class.java)
+            startActivity(intent)
         }
+
     }
 }
