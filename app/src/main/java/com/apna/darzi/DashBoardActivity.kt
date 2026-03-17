@@ -20,6 +20,8 @@ class DashBoardActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_buy, R.id.nav_purchase -> {
+                R.id.nav_buy,
+                R.id.nav_purchase -> {
                     replaceFragment(BuyFragment())
                     true
                 }
