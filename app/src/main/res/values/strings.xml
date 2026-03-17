@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Apna Darzi</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="buy_screen_title">Premium Tailors</string>
+    <string name="buy_screen_subtitle">Trusted shops with fast delivery</string>
+    <string name="chats_title">Recent Chats</string>
+    <string name="all_chats">All Chats</string>
+    <string name="quick_action_home">Quick Home</string>
+    <string name="premium_tag">Top Rated</string>
 </resources>

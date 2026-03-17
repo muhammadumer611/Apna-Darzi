@@ -23,10 +23,10 @@
                 android:id="@+id/tvRecentChats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recent Chats"
+                android:text="@string/chats_title"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#0C1445" />
+                android:textColor="@color/premium_secondary" />
 
             <ImageView
                 android:id="@+id/ivSearch"
@@ -47,7 +47,7 @@
             android:text="Pinned Chats"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#0C1445"
+            android:textColor="@color/premium_secondary"
             android:visibility="gone"
             android:layout_marginTop="6dp" />
 
@@ -64,7 +64,7 @@
             android:id="@+id/btnAllChats"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="All chats"
+            android:text="@string/all_chats"
             android:textAllCaps="false"
             android:paddingTop="7dp"
             android:textSize="14sp"
