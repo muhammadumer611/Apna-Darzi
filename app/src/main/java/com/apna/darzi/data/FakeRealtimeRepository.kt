@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+object FakeRealtimeRepository : AppRepository {
 object FakeRealtimeRepository {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
@@ -20,6 +21,7 @@ object FakeRealtimeRepository {
             ShopItem(3, "Ladies Fancy Dress", "Noor Boutique", 4.6, 4500, 4),
         )
     )
+    private val shops: StateFlow<List<ShopItem>> = _shops.asStateFlow()
     val shops: StateFlow<List<ShopItem>> = _shops.asStateFlow()
 
     private val _chats = MutableStateFlow(
@@ -29,6 +31,7 @@ object FakeRealtimeRepository {
             ChatItem(3, "Nawab House", "Fabric approve kar dein.", "Yesterday"),
         )
     )
+    private val chats: StateFlow<List<ChatItem>> = _chats.asStateFlow()
     val chats: StateFlow<List<ChatItem>> = _chats.asStateFlow()
 
     private val _profile = MutableStateFlow(
@@ -39,6 +42,13 @@ object FakeRealtimeRepository {
             phone = "+923012345678",
         )
     )
+    private val profile: StateFlow<ProfileInfo> = _profile.asStateFlow()
+
+    override fun observeShops(): StateFlow<List<ShopItem>> = shops
+
+    override fun observeChats(): StateFlow<List<ChatItem>> = chats
+
+    override fun observeProfile(): StateFlow<ProfileInfo> = profile
     val profile: StateFlow<ProfileInfo> = _profile.asStateFlow()
 
     init {
