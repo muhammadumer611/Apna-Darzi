@@ -3,39 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@drawable/homebg"
+    android:padding="16dp"
     tools:context=".BuyFragment">
 
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-
-
-    <TextView
-        android:id="@+id/tv_all_shops"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="All Shops"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="20dp" />
-
-    <!-- RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/allshops_recyclerview"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tv_all_shops"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:clipToPadding="false"
-        android:scrollbars="vertical" />
-    </RelativeLayout>
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_premium_header"
+            android:orientation="vertical"
+            android:padding="14dp">
 
+            <TextView
+                android:id="@+id/tv_all_shops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/buy_screen_title"
+                android:textColor="@color/premium_text_primary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/buy_screen_subtitle"
+                android:textColor="@color/premium_text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allshops_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
+            android:scrollbars="vertical" />
+    </LinearLayout>
 </FrameLayout>

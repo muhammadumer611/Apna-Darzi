@@ -9,38 +9,38 @@
     android:background="@drawable/homebg"
     tools:context=".DashBoardActivity">
 
-    <!-- Fragment Container -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNav">
+        android:layout_above="@id/bottomNav" />
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="30dp"
-            android:src="@drawable/home_icon"
-            app:backgroundTint="@color/white"
-            app:tint="@color/black"
-            app:elevation="12dp" />
-    </FrameLayout>
-
-
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottomnev"
         android:background="@drawable/searchview_bg"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
-        app:elevation="30dp" />
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:elevation="20dp"
+        app:itemIconTint="@color/premium_primary"
+        app:itemTextColor="@color/premium_primary"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottomnev" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNav"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="22dp"
+        android:contentDescription="@string/quick_action_home"
+        android:src="@drawable/home_icon"
+        app:backgroundTint="@color/premium_accent"
+        app:elevation="10dp"
+        app:tint="@color/premium_primary" />
 
 </RelativeLayout>
