@@ -13,16 +13,16 @@ class DashBoardActivity : AppCompatActivity() {
         binding = ActivitydashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✅ Default Fragment (Home)
-        replaceFragment(Fragment())
+        replaceFragment(BuyFragment())
 
-        // ✅ Bottom Navigation item selection
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_buy -> {
+                R.id.nav_buy,
+                R.id.nav_purchase -> {
                     replaceFragment(BuyFragment())
                     true
                 }
+
                 R.id.nav_chats -> {
                     replaceFragment(FragmentChat())
                     true
@@ -32,12 +32,12 @@ class DashBoardActivity : AppCompatActivity() {
                     replaceFragment(PersonalInfoFragment())
                     true
                 }
+
                 else -> false
             }
         }
     }
 
-    // ✅ Helper function to replace fragments
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
