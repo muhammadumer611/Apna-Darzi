@@ -1,69 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="280dp"
-    android:layout_height="300dp"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@color/premium_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="10dp">
 
-        <!-- Shop Image -->
         <ImageView
             android:id="@+id/shop_image"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="170dp"
+            android:background="@color/premium_surface"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground"
-            android:background="@color/white" />
+            android:src="@drawable/machine_pic" />
 
-        <!-- Heart icon -->
+        <TextView
+            android:id="@+id/tvPremiumTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/shop_image"
+            android:layout_margin="12dp"
+            android:background="@drawable/btn_yellow_rounded"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="@string/premium_tag"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/fav_icon"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_margin="10dp"
-            android:src="@drawable/ic_favorite_border_white"
             android:background="@drawable/rounded_transparent_circle"
-            android:padding="4dp" />
+            android:padding="4dp"
+            android:src="@drawable/ic_favorite_border_white" />
 
-        <!-- Shop title -->
         <TextView
             android:id="@+id/shop_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Custom Suit Tailoring with modern design and cheap rates"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:maxLines="2"
-            android:ellipsize="end"
             android:layout_below="@id/shop_image"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Custom Suit Tailoring with modern design and cheap rates"
+            android:textColor="@color/premium_text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <!-- Studio name -->
         <TextView
             android:id="@+id/studio_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arshad Tailor Studio"
-            android:textColor="#666666"
-            android:textSize="13sp"
             android:layout_below="@id/shop_title"
-            android:layout_marginTop="2dp" />
+            android:layout_marginTop="4dp"
+            android:text="Arshad Tailor Studio"
+            android:textColor="@color/premium_text_secondary"
+            android:textSize="13sp" />
 
-        <!-- Rating + Star -->
         <LinearLayout
             android:id="@+id/rating_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/studio_name"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -75,50 +86,47 @@
                 android:id="@+id/rating_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:text="4.5"
-                android:textColor="#000000"
+                android:textColor="@color/premium_text_primary"
                 android:textSize="13sp"
-                android:layout_marginStart="4dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:text="• 5 Specials"
-                android:textColor="#666666"
-                android:textSize="13sp"
-                android:layout_marginStart="6dp" />
+                android:textColor="@color/premium_text_secondary"
+                android:textSize="13sp" />
         </LinearLayout>
 
-        <!-- Price + Delivery -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_below="@id/rating_layout"
-            android:layout_marginTop="8dp"
-            android:weightSum="2"
-            >
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_price"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="PKR 2000"
-                android:textColor="#E91E63"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:layout_weight="1"/>
+                android:textColor="@color/premium_secondary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_delivery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4 Days Delivery"
-                android:textColor="#666666"
+                android:textColor="@color/premium_success"
                 android:textSize="13sp"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
         </LinearLayout>
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

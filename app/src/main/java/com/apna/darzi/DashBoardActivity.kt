@@ -1,6 +1,7 @@
 package com.apna.darzi
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.apna.darzi.databinding.ActivitydashBoardBinding
@@ -13,16 +14,16 @@ class DashBoardActivity : AppCompatActivity() {
         binding = ActivitydashBoardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // ✅ Default Fragment (Home)
-        replaceFragment(Fragment())
+        binding.bottomNav.selectedItemId = R.id.nav_buy
+        replaceFragment(BuyFragment())
 
-        // ✅ Bottom Navigation item selection
         binding.bottomNav.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_buy -> {
+                R.id.nav_buy, R.id.nav_purchase -> {
                     replaceFragment(BuyFragment())
                     true
                 }
+
                 R.id.nav_chats -> {
                     replaceFragment(FragmentChat())
                     true
@@ -32,12 +33,18 @@ class DashBoardActivity : AppCompatActivity() {
                     replaceFragment(PersonalInfoFragment())
                     true
                 }
+
                 else -> false
             }
         }
+
+        binding.fabAdd.setOnClickListener {
+            binding.bottomNav.selectedItemId = R.id.nav_buy
+            replaceFragment(BuyFragment())
+            Toast.makeText(this, getString(R.string.buy_screen_title), Toast.LENGTH_SHORT).show()
+        }
     }
 
-    // ✅ Helper function to replace fragments
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
