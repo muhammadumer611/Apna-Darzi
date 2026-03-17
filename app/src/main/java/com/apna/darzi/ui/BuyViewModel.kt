@@ -12,4 +12,7 @@ class BuyViewModel : ViewModel() {
         .observeShops()
         .onStart { emit(emptyList()) }
         .catch { emitAll(FakeRealtimeRepository.observeShops()) }
+
+class BuyViewModel : ViewModel() {
+    val shops = FakeRealtimeRepository.shops
 }

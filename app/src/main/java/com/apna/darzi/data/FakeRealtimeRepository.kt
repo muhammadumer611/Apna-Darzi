@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 object FakeRealtimeRepository : AppRepository {
+object FakeRealtimeRepository {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
     private val _shops = MutableStateFlow(
@@ -21,6 +22,7 @@ object FakeRealtimeRepository : AppRepository {
         )
     )
     private val shops: StateFlow<List<ShopItem>> = _shops.asStateFlow()
+    val shops: StateFlow<List<ShopItem>> = _shops.asStateFlow()
 
     private val _chats = MutableStateFlow(
         listOf(
@@ -30,6 +32,7 @@ object FakeRealtimeRepository : AppRepository {
         )
     )
     private val chats: StateFlow<List<ChatItem>> = _chats.asStateFlow()
+    val chats: StateFlow<List<ChatItem>> = _chats.asStateFlow()
 
     private val _profile = MutableStateFlow(
         ProfileInfo(
@@ -46,6 +49,7 @@ object FakeRealtimeRepository : AppRepository {
     override fun observeChats(): StateFlow<List<ChatItem>> = chats
 
     override fun observeProfile(): StateFlow<ProfileInfo> = profile
+    val profile: StateFlow<ProfileInfo> = _profile.asStateFlow()
 
     init {
         startAutoUpdates()

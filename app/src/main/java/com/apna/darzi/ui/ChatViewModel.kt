@@ -12,4 +12,7 @@ class ChatViewModel : ViewModel() {
         .observeChats()
         .onStart { emit(emptyList()) }
         .catch { emitAll(FakeRealtimeRepository.observeChats()) }
+
+class ChatViewModel : ViewModel() {
+    val chats = FakeRealtimeRepository.chats
 }

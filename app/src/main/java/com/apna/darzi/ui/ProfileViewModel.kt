@@ -13,4 +13,7 @@ class ProfileViewModel : ViewModel() {
         .observeProfile()
         .onStart { emit(ProfileInfo()) }
         .catch { emitAll(FakeRealtimeRepository.observeProfile()) }
+
+class ProfileViewModel : ViewModel() {
+    val profile = FakeRealtimeRepository.profile
 }
